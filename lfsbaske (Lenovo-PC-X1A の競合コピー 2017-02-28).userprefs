@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MainScene\ImportModels\82iyyrrpwbgg-Pokeball\README.txt">
+    <Files>
+      <File FileName="Assets\GoogleVR\Scripts\GvrViewer.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainScene\Script\MyCameraMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainScene\Script\GyroInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainScene\Script\CreateBall.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainScene\Script\BallDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainScene\Script\MyGameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainScene\ImportModels\82iyyrrpwbgg-Pokeball\README.txt" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
