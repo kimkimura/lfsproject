@@ -142,7 +142,9 @@
      <Compile Include="Assets\MainScene\Script\BallDestroy.cs" />
      <Compile Include="Assets\MainScene\Script\CreateBall.cs" />
      <Compile Include="Assets\MainScene\Script\GoalScript.cs" />
+     <Compile Include="Assets\MainScene\Script\GoalShoot.cs" />
      <Compile Include="Assets\MainScene\Script\GyroInput.cs" />
+     <Compile Include="Assets\MainScene\Script\NormalShoot.cs" />
      <None Include="Assets\GoogleVR\Distortion\GvrDistortion.cginc" />
      <None Include="Assets\Plugins\Android\proguard-gvr.txt" />
      <None Include="Assets\GoogleVR\Demos\Shaders\VideoDemo\VideoDemoInsideShader.shader" />
@@ -182,7 +184,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Google.ProtocolBuffers">
- <HintPath>C:/Users/KDOWIN81/Dropbox/lfsbaske/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ <HintPath>C:/lfsbaske/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
