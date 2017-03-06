@@ -6,6 +6,9 @@ using UnityEditor;
 public class GoalScript : MonoBehaviour {
 	public Text rightText,leftText;
 	public GameManager gameManager;
+	public GameObject goalParticle;
+	public AudioSource audio;
+	public AudioClip goal;
 	// Use this for initialization
 	void Start () {
 	}
@@ -19,6 +22,8 @@ public class GoalScript : MonoBehaviour {
 		if (col.gameObject.tag == "Ball") {
 			gameManager.Scoring (1);
 			Destroy (col.gameObject);
+			goalParticle.GetComponent<ParticleSystem> ().Play ();
+			audio.PlayOneShot (goal);
 		}
 	}
 }

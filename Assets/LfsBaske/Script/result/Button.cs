@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Button : MonoBehaviour {
-
+	public AudioSource audio;
+	public AudioClip button;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,6 +15,7 @@ public class Button : MonoBehaviour {
 		
 	}
 	public void ReturnToTitle(){
+		audio.PlayOneShot (button);
 		SceneManager.LoadScene ("StartScene");
 	}
 }

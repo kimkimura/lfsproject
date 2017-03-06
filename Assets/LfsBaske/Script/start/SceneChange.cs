@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour {
-
+	public AudioSource audio;
+	public AudioClip button;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,6 +15,7 @@ public class SceneChange : MonoBehaviour {
 		
 	}
 	public void ChangeMainScene(){
+		audio.PlayOneShot (button);
 		SceneManager.LoadScene ("MainScene");
 	}
 }

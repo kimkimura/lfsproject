@@ -145,10 +145,10 @@
      <Compile Include="Assets\LfsBaske\Script\main\GoalScript.cs" />
      <Compile Include="Assets\LfsBaske\Script\main\GoalShoot.cs" />
      <Compile Include="Assets\LfsBaske\Script\main\GyroInput.cs" />
-     <Compile Include="Assets\LfsBaske\Script\main\NormalShoot.cs" />
      <Compile Include="Assets\LfsBaske\Script\result\Button.cs" />
      <Compile Include="Assets\LfsBaske\Script\result\SetScore.cs" />
      <Compile Include="Assets\LfsBaske\Script\start\CameraRotate.cs" />
+     <Compile Include="Assets\LfsBaske\Script\start\DontDestroyBGM.cs" />
      <Compile Include="Assets\LfsBaske\Script\start\SceneChange.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />

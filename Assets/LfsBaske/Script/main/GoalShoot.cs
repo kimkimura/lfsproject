@@ -3,22 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GoalShoot : MonoBehaviour {
-	private Vector3 bestShoot = new Vector3(7.1f,16.5f,0);
-	private float prevAccelerationZ;
-	private bool isRunning;
+	private Vector3 bestShoot = new Vector3(7f,16.5f,0);
+	private Vector3 prevAcceleration;
+	private bool isRunning,isDamageRunning;
+	private bool isDamage;
+	public Animation anim;
+	public GyroInput gyro;
+	public AudioSource audio;
+	public AudioClip shoot,damage;
 	// Use this for initialization
 	void Start () {
+		isDamage = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		StartCoroutine ("Interval");
+		if (isDamage) {
+			StartCoroutine ("Damage");
+			gyro.enabled = false;
+			Debug.Log ("ダメージなう");
+		}
 	}
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag == "Ball") {
-			if(Input.acceleration.z < prevAccelerationZ && Mathf.Abs(Input.acceleration.z - prevAccelerationZ) > 0.4f)
-				col.gameObject.GetComponent<Rigidbody> ().velocity = bestShoot;
-			col.gameObject.layer = LayerMask.NameToLayer("ToutchedBall");
+		if (!isDamage) {
+			switch (col.gameObject.tag) {
+			case "Ball":
+				{
+					if (heddingBall ()) {
+						col.gameObject.layer = LayerMask.NameToLayer ("ToutchedBall");
+						if (this.gameObject.tag == "DummyCol")
+							col.gameObject.GetComponent<Rigidbody> ().velocity = this.transform.forward * Random.Range (15, 25);
+						else if (this.gameObject.tag == "BestHitCol")
+							col.gameObject.GetComponent<Rigidbody> ().velocity = bestShoot;
+						audio.PlayOneShot (shoot);
+						col.gameObject.layer = LayerMask.NameToLayer ("ToutchedBall");
+					}
+					break;
+				}
+			case "NotBall":
+				{
+					isDamage = true;
+					anim.Play ();
+					audio.PlayOneShot (damage);
+					break;
+				}
+			default:
+				break;
+			}
 		}
 	}
 	IEnumerator Interval(){
@@ -26,7 +58,23 @@ public class GoalShoot : MonoBehaviour {
 			yield break;
 		isRunning = true;
 		yield return new WaitForSeconds (0.25f);
-		prevAccelerationZ = Input.acceleration.z;
+		prevAcceleration = Input.acceleration;
 		isRunning = false;
+	}
+	IEnumerator Damage(){
+		if (isDamageRunning)
+			yield break;
+		isDamageRunning = true;
+		yield return new WaitForSeconds (1f);
+		isDamage = false;
+		isDamageRunning = false;
+		gyro.enabled = true;
+
+	}
+	bool heddingBall(){
+		if (Input.acceleration.z < prevAcceleration.z && Mathf.Abs (Input.acceleration.z - prevAcceleration.z) > 0.4f)
+			return true;
+		else
+			return false;
 	}
 }
