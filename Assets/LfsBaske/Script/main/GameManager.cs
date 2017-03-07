@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
-	private const float time = 90;	//ゲーム制限時間
+	private const float time = 60;	//ゲーム制限時間
 	private const float count = 10;	//スタートのカウントダウン時間
 	[SerializeField]
 	private float currentTime;		//現在の残り時間

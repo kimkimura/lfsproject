@@ -145,6 +145,7 @@
      <Compile Include="Assets\LfsBaske\Script\main\GoalScript.cs" />
      <Compile Include="Assets\LfsBaske\Script\main\GoalShoot.cs" />
      <Compile Include="Assets\LfsBaske\Script\main\GyroInput.cs" />
+     <Compile Include="Assets\LfsBaske\Script\main\InitUI.cs" />
      <Compile Include="Assets\LfsBaske\Script\result\Button.cs" />
      <Compile Include="Assets\LfsBaske\Script\result\SetScore.cs" />
      <Compile Include="Assets\LfsBaske\Script\start\CameraRotate.cs" />

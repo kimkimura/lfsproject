@@ -19,7 +19,7 @@ public class CreateBall : MonoBehaviour {
 			if (count > 1.5f) {
 				float x = 8;
 				float y = Random.Range (5.0f, 7.0f);
-				float z = Random.Range (-7.5f, 7.5f);
+				float z = Random.Range (-6.5f, 6.5f);
 
 				if (Random.Range (1.0f, 100.0f) < 95) {
 					GameObject newBall = Instantiate (ball, new Vector3 (x, y, z), Quaternion.identity);
@@ -27,7 +27,7 @@ public class CreateBall : MonoBehaviour {
 					newBall.GetComponent<Rigidbody> ().velocity = newBall.transform.forward * ballVelocity + offset;
 				} else {
 					GameObject newNotBall = Instantiate (notBall, new Vector3 (x, y, z), Quaternion.identity);
-					newNotBall.transform.LookAt (GameObject.FindWithTag ("Player").transform.position + new Vector3(0,0,Random.Range(-0.5f,0.5f)));
+					newNotBall.transform.LookAt (GameObject.FindWithTag ("Player").transform.position + new Vector3(0,0,Random.Range(-1.5f,1.5f)));
 					newNotBall.GetComponent<Rigidbody> ().velocity = newNotBall.transform.forward * notBallVelocity + offset;
 				}
 				count = 0;

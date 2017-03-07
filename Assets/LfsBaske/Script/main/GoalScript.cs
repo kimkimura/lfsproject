@@ -7,7 +7,7 @@ public class GoalScript : MonoBehaviour {
 	public Text rightText,leftText;
 	public GameManager gameManager;
 	public GameObject goalParticle;
-	public AudioSource audio;
+	public AudioSource audioSource;
 	public AudioClip goal;
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class GoalScript : MonoBehaviour {
 			gameManager.Scoring (1);
 			Destroy (col.gameObject);
 			goalParticle.GetComponent<ParticleSystem> ().Play ();
-			audio.PlayOneShot (goal);
+			audioSource.PlayOneShot (goal);
 		}
 	}
 }

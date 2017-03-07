@@ -9,7 +9,7 @@ public class GoalShoot : MonoBehaviour {
 	private bool isDamage;
 	public Animation anim;
 	public GyroInput gyro;
-	public AudioSource audio;
+	public AudioSource audioSource;
 	public AudioClip shoot,damage;
 	// Use this for initialization
 	void Start () {
@@ -36,7 +36,7 @@ public class GoalShoot : MonoBehaviour {
 							col.gameObject.GetComponent<Rigidbody> ().velocity = this.transform.forward * Random.Range (15, 25);
 						else if (this.gameObject.tag == "BestHitCol")
 							col.gameObject.GetComponent<Rigidbody> ().velocity = bestShoot;
-						audio.PlayOneShot (shoot);
+						audioSource.PlayOneShot (shoot);
 						col.gameObject.layer = LayerMask.NameToLayer ("ToutchedBall");
 					}
 					break;
@@ -45,7 +45,7 @@ public class GoalShoot : MonoBehaviour {
 				{
 					isDamage = true;
 					anim.Play ();
-					audio.PlayOneShot (damage);
+					audioSource.PlayOneShot (damage);
 					break;
 				}
 			default:
@@ -72,7 +72,7 @@ public class GoalShoot : MonoBehaviour {
 
 	}
 	bool heddingBall(){
-		if (Input.acceleration.z < prevAcceleration.z && Mathf.Abs (Input.acceleration.z - prevAcceleration.z) > 0.4f)
+		if (Input.acceleration.z < prevAcceleration.z && Mathf.Abs (Input.acceleration.z - prevAcceleration.z) > 0.3f)
 			return true;
 		else
 			return false;
